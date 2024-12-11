@@ -1,0 +1,18 @@
+[11-Dec-2024 20:33:19 UTC] PHP Fatal error:  Uncaught Error: Class "City Temperature Widget" not found in C:\xampp\htdocs\testwork0134\wp-includes\class-wp-widget-factory.php:62
+Stack trace:
+#0 C:\xampp\htdocs\testwork0134\wp-includes\widgets.php(123): WP_Widget_Factory->register('City Temperatur...')
+#1 C:\xampp\htdocs\testwork0134\wp-content\themes\storefront-child\functions.php(97): register_widget('City Temperatur...')
+#2 C:\xampp\htdocs\testwork0134\wp-includes\class-wp-hook.php(324): register_city_temperature_widget('')
+#3 C:\xampp\htdocs\testwork0134\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#4 C:\xampp\htdocs\testwork0134\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\testwork0134\wp-includes\widgets.php(1870): do_action('widgets_init')
+#6 C:\xampp\htdocs\testwork0134\wp-includes\class-wp-hook.php(324): wp_widgets_init('')
+#7 C:\xampp\htdocs\testwork0134\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#8 C:\xampp\htdocs\testwork0134\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#9 C:\xampp\htdocs\testwork0134\wp-settings.php(704): do_action('init')
+#10 C:\xampp\htdocs\testwork0134\wp-config.php(104): require_once('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\testwork0134\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\testwork0134\wp-admin\admin.php(34): require_once('C:\\xampp\\htdocs...')
+#13 C:\xampp\htdocs\testwork0134\wp-admin\theme-editor.php(10): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+  thrown in C:\xampp\htdocs\testwork0134\wp-includes\class-wp-widget-factory.php on line 62
