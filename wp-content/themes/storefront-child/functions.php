@@ -1,12 +1,12 @@
 <?php
-// Enqueue Parent and Child Theme Styles
+// Enqueue The Parent and Child Theme Styles
 function storefront_child_enqueue_styles() {
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', array('parent-style'));
 }
 add_action('wp_enqueue_scripts', 'storefront_child_enqueue_styles');
 
-// Register Custom Post Type "Cities"
+// Register Thw Custom Post Type "Cities"
 function create_cities_post_type() {
     $args = array(
         'labels' => array(
