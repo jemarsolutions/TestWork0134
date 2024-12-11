@@ -1,12 +1,12 @@
 <?php
-// Step 1: Enqueue Parent and Child Theme Styles
+// Enqueue Parent and Child Theme Styles
 function storefront_child_enqueue_styles() {
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', array('parent-style'));
 }
 add_action('wp_enqueue_scripts', 'storefront_child_enqueue_styles');
 
-// Step 2: Register Custom Post Type "Cities"
+// Register Custom Post Type "Cities"
 function create_cities_post_type() {
     $args = array(
         'labels' => array(
@@ -22,7 +22,7 @@ function create_cities_post_type() {
 }
 add_action('init', 'create_cities_post_type');
 
-// Step 3: Add Meta Box for Latitude and Longitude
+// Add Meta Box for Latitude and Longitude
 function add_city_meta_boxes() {
     add_meta_box('city_coordinates', 'City Coordinates', 'city_coordinates_callback', 'cities', 'normal', 'high');
 }
@@ -47,7 +47,7 @@ function save_city_meta($post_id) {
 }
 add_action('save_post', 'save_city_meta');
 
-// Step 4: Register Custom Taxonomy "Countries"
+// Register Custom Taxonomy "Countries"
 function create_countries_taxonomy() {
     $args = array(
         'labels' => array(
@@ -61,7 +61,7 @@ function create_countries_taxonomy() {
 }
 add_action('init', 'create_countries_taxonomy');
 
-// Step 5: Create Widget for City and Temperature
+// Create Widget for City and Temperature
 define('OPENWEATHERMAP_API_KEY', '1ed6a6a4440e2278f1b080fb873dabbb');
 
 class City_Temperature_Widget extends WP_Widget {
@@ -98,7 +98,7 @@ function register_city_temperature_widget() {
 }
 add_action('widgets_init', 'register_city_temperature_widget');
 
-// Step 6: Custom Template with Table and AJAX Search
+// Custom Template with Table and AJAX Search
 function enqueue_city_search_scripts() {
     wp_enqueue_script('city-search', get_stylesheet_directory_uri() . '/js/city-search.js', array('jquery'), null, true);
     wp_localize_script('city-search', 'ajax_object', array('ajax_url' => admin_url('admin-ajax.php')));
